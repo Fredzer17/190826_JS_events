@@ -1,19 +1,52 @@
+// Exercice 1
+ 
+var footer =  document.getElementsByTagName("footer")[0];
+var count = 1
 
-// // Fonctionnalité 1 :
-// // On commence par un petit échauffement : lorsque
-//  l'utilisateur va cliquer sur le footer (portant le 
-//   tag <footer>), tu vas afficher le mot "clique" en console.
-
-// // Cette fonctionnalité doit être codée avec un 
-// addEventListener("click", function(){ } car c'est 
-// une bonne habitude à prendre ! 😇
-
-// // Fonctionnalité 1-bis :
-// // Maintenant on va upgrader cette première 
-// fonctionnalité : lorsque l'utilisateur va cliquer
-//  sur le footer, tu vas afficher en console "clic numéro x" 
-//  avec x qui commence à 1 et s'incrémente de +1 à chaque clic.
+footer.addEventListener("click", function() {
+  var x = 
+  console.log("clic n°" + count)
+  count ++
+});
 
 
-var
-addEventListener("click", function(){ })
+// Exercice 2
+
+var navbarHeader = document.getElementById("navbarHeader");
+var navBtn = document.querySelector(".navbar-toggler-icon");
+navBtn.addEventListener("click", function() {
+  navbarHeader.classList.toggle("collapse");
+});
+
+
+// Exercice 3
+
+var textCard = document.querySelectorAll(".card-body p");
+var editBtn = document.querySelectorAll(".card .btn") ;   //Pas compris pourquoi ce .card .btn fonctionnait, car ne l'ai pas trouvé ds le html..
+editBtn[1].addEventListener("click", function() {
+  textCard[0].style.color = "red" ;
+});
+
+
+// Exercice 4
+
+textCard[1].style.color = 'black'
+editBtn[3].addEventListener("click", function() {
+if (textCard[1].style.color === 'green'){ 
+  textCard[1].style.color = '' ; 
+  }else
+  textCard[1].style.color = 'green';
+});
+
+
+// Exercice 5
+
+var header = document.getElementsByTagName("header")[0];
+var headerOnClick = function() {
+  if(document.styleSheets[0].disabled==false) {
+    document.styleSheets[0].disabled=true;
+  } else {
+    document.styleSheets[0].disabled=false;
+  }
+}
+header.addEventListener("dblclick", headerOnClick);
